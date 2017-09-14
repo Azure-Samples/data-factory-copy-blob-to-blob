@@ -42,8 +42,7 @@ namespace V2Test
             Factory dataFactory = new Factory
             {
                 Location = region,
-                LoggingStorageAccountName = storageAccount, // Storage account for logging
-                LoggingStorageAccountKey = storageKey       // Storage account key for logging
+                Identity = new FactoryIdentity()
             };
             client.Factories.CreateOrUpdate(resourceGroup, dataFactoryName, dataFactory);
             Console.WriteLine(SafeJsonConvert.SerializeObject(dataFactory, client.SerializationSettings));
